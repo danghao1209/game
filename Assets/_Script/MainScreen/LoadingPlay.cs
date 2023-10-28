@@ -19,7 +19,7 @@ public class LoadingPlay : MonoBehaviour
 
         while (!operation.isDone)
         {
-            yield return null;
+            yield return operation;
         }
     }
 }
