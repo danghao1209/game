@@ -11,7 +11,8 @@
 <br />
 <div align="center">
   <h3 align="center">Unity Game Hero Servival</h3>
-![z4826397221376_ce1885f0324d0ef374e1b0661bb053e5](https://github.com/haotamht/game/assets/62649837/f9c02e9d-3327-407c-8954-329da885ff41)
+
+  ![z4826397221376_ce1885f0324d0ef374e1b0661bb053e5](https://github.com/haotamht/game/assets/62649837/f9c02e9d-3327-407c-8954-329da885ff41)
 
   <p align="center">
     <br />
