@@ -7,7 +7,8 @@ public class CharacterStats : MonoBehaviour
     public int armor ;
     public int speed_run;
     public int speed_attack;
-    public int health;
+    public int currentHp;
+    public int maxHealth;
     public int atk;
     public int crit;
     public int crit_dame_percent;
@@ -20,8 +21,8 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        currentHp -= damage;
+        if (currentHp <= 0)
         {
             Die();
         }

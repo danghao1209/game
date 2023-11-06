@@ -4,27 +4,11 @@ using UnityEngine;
 
 public class GhostEnemyStats : EnemyStats
 {
-    private static GhostEnemyStats instance;
-    private GhostEnemyStats()
-    {
-        health = 100;
-        dame = 30;
-    }
 
-    public static GhostEnemyStats Instance
+    void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new GhostEnemyStats();
-            }
-            return instance;
-        }
-    }
-    void Start()
-    {
-
+        health = 120;
+        dame = 40;
     }
 
     // Update is called once per frame

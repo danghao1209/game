@@ -4,27 +4,12 @@ using UnityEngine;
 
 public class SkeletonEnemyStats : EnemyStats
 {
-    private static SkeletonEnemyStats instance;
-    private SkeletonEnemyStats()
-    {
-        health = 400;
-        dame = 10;
-    }
+    
 
-    public static SkeletonEnemyStats Instance
+    void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new SkeletonEnemyStats();
-            }
-            return instance;
-        }
-    }
-    void Start()
-    {
-
+        health = 300;
+        dame = 40;
     }
 
     // Update is called once per frame

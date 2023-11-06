@@ -12,6 +12,7 @@ public class EnemyAndBossMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Characters").transform;
     }
 
     void Update()

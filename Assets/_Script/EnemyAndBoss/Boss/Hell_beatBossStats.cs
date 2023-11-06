@@ -4,27 +4,11 @@ using UnityEngine;
 
 public class Hell_beatBossStats : BossStats
 {
-    private static Hell_beatBossStats instance;
-    private Hell_beatBossStats()
+    
+    void Awake()
     {
-        health = 100;
-        dame = 30;
-    }
-
-    public static Hell_beatBossStats Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new Hell_beatBossStats();
-            }
-            return instance;
-        }
-    }
-    void Start()
-    {
-
+        health = 3000;
+        dame = 100;
     }
 
     // Update is called once per frame

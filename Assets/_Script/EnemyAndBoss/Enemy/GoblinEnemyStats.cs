@@ -4,27 +4,13 @@ using UnityEngine;
 
 public class GoblinEnemyStats : EnemyStats
 {
-    private static GoblinEnemyStats instance;
-    private GoblinEnemyStats()
-    {
-        health = 300;
-        dame = 15;
-    }
+    
 
-    public static GoblinEnemyStats Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new GoblinEnemyStats();
-            }
-            return instance;
-        }
-    }
-    void Start()
+    void Awake()
     {
 
+        health = 200;
+        dame = 30;
     }
 
     // Update is called once per frame

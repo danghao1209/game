@@ -22,10 +22,12 @@ public class Movement : MonoBehaviour
         if (player != null)
         {
             anim = player.GetComponent<Animator>();
+            moveSpeed = Character1Stats.Instance.speed_run;
         }
         else if(player2 != null)
         {
             anim = player2.GetComponent<Animator>();
+            moveSpeed = Character2Stats.Instance.speed_run;
         }
         else
         {

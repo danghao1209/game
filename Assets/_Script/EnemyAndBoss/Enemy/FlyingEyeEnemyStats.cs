@@ -5,27 +5,13 @@ using UnityEngine;
 public class FlyingEyeEnemyStats : EnemyStats
 {
     // Start is called before the first frame update
-    private static FlyingEyeEnemyStats instance;
-    private FlyingEyeEnemyStats()
-    {
-        health = 100;
-        dame = 20;
-    }
+    
 
-    public static FlyingEyeEnemyStats Instance
+    
+    void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new FlyingEyeEnemyStats();
-            }
-            return instance;
-        }
-    }
-    void Start()
-    {
-        
+        health = 150;
+        dame = 30;
     }
 
     // Update is called once per frame
