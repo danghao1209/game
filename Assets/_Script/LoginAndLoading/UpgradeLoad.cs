@@ -38,6 +38,8 @@ public class UpgradeLoad : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
+        LoadDataUpgrade();
     }
     public void LoadDataUpgrade()
     {
@@ -46,7 +48,6 @@ public class UpgradeLoad : MonoBehaviour
 
 
 
-    [System.Obsolete]
     IEnumerator LoadDataUpgrade_Coroutine()
     {
         string urlLogin = $"{ApiConfig.UpgradeUrl}/all";

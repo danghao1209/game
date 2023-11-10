@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int armor ;
     public int speed_run;
-    public int speed_attack;
+    public double speed_attack;
     public int currentHp;
     public int maxHealth;
     public int atk;

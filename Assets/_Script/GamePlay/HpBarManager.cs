@@ -35,7 +35,6 @@ public class HpBarManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(this.gameObject);
 
         if (character1 != null)
         {

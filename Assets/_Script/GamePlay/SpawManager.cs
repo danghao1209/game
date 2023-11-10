@@ -30,7 +30,7 @@ public class SpawManager : MonoBehaviour
 
     IEnumerator SpawnFirst()
     {
-        StartCoroutine(SpawnEnemyWithHealth(0, 10));
+        StartCoroutine(SpawnEnemyWithHealth(0, 20));
         yield return null;
 
     }

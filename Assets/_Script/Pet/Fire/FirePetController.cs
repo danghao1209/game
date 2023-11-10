@@ -11,17 +11,12 @@ public class FirePetController : MonoBehaviour
     public Transform firePos;
 
     public float TimeBtwFire = 1f;
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     private GameObject currentWaterWeapon;
 
     public int level;
     public int maxLevel;
     private void Awake()
-    {
-        level = 0;
-        maxLevel = 3;
-    }
-    void Start()
     {
         if (GameObject.Find("Player1") != null)
         {
@@ -31,27 +26,57 @@ public class FirePetController : MonoBehaviour
         {
             characterStats = Character2Stats.Instance;
         }
-        StartCoroutine(FirePeriodically());
-    }
 
-    void FireLevel1()
+        level = 0;
+        maxLevel = 3;
+       
+    }
+    void Start()
     {
-        // Tạo hình ảnh chiêu nước tại vị trí firePos
+        moveSpeed = characterStats.speed_run;
+        //StartCoroutine(FirePeriodically());
+
         currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
 
+        StartCoroutine(FirePeriodically1());
     }
-    void FireLevel2()
+
+    public void FireLevel1()
     {
         // Tạo hình ảnh chiêu nước tại vị trí firePos
-        currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
+
+        currentWaterWeapon.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+    }
+    public void FireLevel2()
+    {
+        // Tạo hình ảnh chiêu nước tại vị trí firePos
         currentWaterWeapon.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
     }
-    void FireLevel3()
+    public void FireLevel3()
     {
         // Tạo hình ảnh chiêu nước tại vị trí firePos
-        currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
         currentWaterWeapon.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
     }
+
+
+    //void FireLevel1()
+    //{
+    //    // Tạo hình ảnh chiêu nước tại vị trí firePos
+    //    currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
+
+    //}
+    //void FireLevel2()
+    //{
+    //    // Tạo hình ảnh chiêu nước tại vị trí firePos
+    //    currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
+    //    currentWaterWeapon.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+    //}
+    //void FireLevel3()
+    //{
+    //    // Tạo hình ảnh chiêu nước tại vị trí firePos
+    //    currentWaterWeapon = Instantiate(fireWeapon, firePos.position, Quaternion.identity);
+    //    currentWaterWeapon.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+    //}
 
     void MoveWaterWeaponTowardsCharacter()
     {
@@ -64,28 +89,51 @@ public class FirePetController : MonoBehaviour
         }
     }
 
-    IEnumerator FirePeriodically()
+    IEnumerator FirePeriodically1()
     {
+
+
+
         while (true)
         {
             if (level == 1)
             {
-                yield return new WaitForSeconds(TimeBtwFire);
                 FireLevel1();
             }
             if (level == 2)
             {
-                yield return new WaitForSeconds(TimeBtwFire - 0.1f);
                 FireLevel2();
             }
             if (level == 3)
             {
-                yield return new WaitForSeconds(TimeBtwFire - 0.2f);
                 FireLevel3();
             }
+            yield return new WaitForSeconds(TimeBtwFire);
         }
-
     }
+
+    //IEnumerator FirePeriodically()
+    //{
+    //    while (true)
+    //    {
+    //        if (level == 1)
+    //        {
+    //            yield return new WaitForSeconds(TimeBtwFire);
+    //            FireLevel1();
+    //        }
+    //        if (level == 2)
+    //        {
+    //            yield return new WaitForSeconds(TimeBtwFire - 0.1f);
+    //            FireLevel2();
+    //        }
+    //        if (level == 3)
+    //        {
+    //            yield return new WaitForSeconds(TimeBtwFire - 0.2f);
+    //            FireLevel3();
+    //        }
+    //    }
+
+    //}
 
     void Update()
     {

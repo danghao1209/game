@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4272460151213153888}
   - component: {fileID: 3380460086755637366}
   - component: {fileID: -7250762709801367746}
+  - component: {fileID: 8489411103253942849}
   m_Layer: 0
   m_Name: WaterWeapon
   m_TagString: Untagged
@@ -183,3 +184,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1533e72da58b2b4cbd16ee4b41e9e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8489411103253942849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203604576574140177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1e32fdc9cbdaf488d3cc6ef3efd4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petStats: {fileID: 0}

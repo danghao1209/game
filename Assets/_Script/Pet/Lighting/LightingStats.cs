@@ -7,7 +7,6 @@ public class LightingStats : PetStats
 {
     private static LightingStats _instance;
 
-    public PetManager petManager;
     private void Awake()
     {
         if (_instance == null)
@@ -21,17 +20,17 @@ public class LightingStats : PetStats
             Destroy(gameObject);
         }
 
-        name = petManager.water.name;
-        star = petManager.water.star;
-        atk = petManager.water.atk;
-        cooldown = petManager.water.cooldown;
-        atkBuff = petManager.water.atkBuff;
-        critBuff = petManager.water.critBuff;
-        speedRunBuff = petManager.water.speedRunBuff;
-        speedAttachBuff = petManager.water.speedAttachBuff;
-        hpBuff = petManager.water.hpBuff;
-        dameCritBuff = petManager.water.dameCritBuff;
-        armorBuff = petManager.water.armorBuff;
+        name = PetManager.Instance.lighting.name;
+        star = PetManager.Instance.lighting.star;
+        atk = PetManager.Instance.lighting.atk;
+        cooldown = PetManager.Instance.lighting.cooldown;
+        atkBuff = PetManager.Instance.lighting.atkBuff;
+        critBuff = PetManager.Instance.lighting.critBuff;
+        speedRunBuff = PetManager.Instance.lighting.speedRunBuff;
+        speedAttachBuff = PetManager.Instance.lighting.speedAttachBuff;
+        hpBuff = PetManager.Instance.lighting.hpBuff;
+        dameCritBuff = PetManager.Instance.lighting.dameCritBuff;
+        armorBuff = PetManager.Instance.lighting.armorBuff;
 
     }
     public static LightingStats Instance

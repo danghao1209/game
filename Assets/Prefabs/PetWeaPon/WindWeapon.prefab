@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6318313918709313395}
   - component: {fileID: 3206632310908980606}
   - component: {fileID: 5137655269924096274}
+  - component: {fileID: -5566903700831679856}
   m_Layer: 0
   m_Name: WindWeapon
   m_TagString: Untagged
@@ -183,3 +184,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53fe8fbe1d88ae41a2b2af817f0c8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5566903700831679856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531218611010491754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b157c98a2df45a94c921b353db127f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petStats: {fileID: 0}

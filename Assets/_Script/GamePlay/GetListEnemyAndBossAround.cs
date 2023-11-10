@@ -7,7 +7,7 @@ public class GetListEnemyAndBossAround : MonoBehaviour
 
     // Đặt bán kính và các lớp cần phát hiện ở đây
     public LayerMask detectionLayer;
-    public float detectionRadius = 10.0f;
+    public float detectionRadius = 6.0f;
 
 
     List<GameObject> NearByCharacter()

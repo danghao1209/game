@@ -8,11 +8,11 @@ public class UpGradeInGamePlay : MonoBehaviour
 {
     private static UpGradeInGamePlay _instance;
 
-    public int enemyDieCount = 0;
-    public int bossDieCount = 0;
+    private int enemyDieCount = 0;
+    private int bossDieCount = 0;
 
-    private int upgradePetThreshold = 20;
-    private int upgradeCharacterThreshold = 1;
+    private readonly int upgradePetThreshold = 20;
+    private readonly int upgradeCharacterThreshold = 1;
 
     public GameObject upGradePet;
     public GameObject upGradeCharacter;
@@ -24,8 +24,6 @@ public class UpGradeInGamePlay : MonoBehaviour
     private int previousUpgradePetCount = 0;
     private int previousUpgradeCharacterCount = 0;
 
-    public Button continuePet;
-    public Button continueCharacter;
 
     public static UpGradeInGamePlay Instance
     {
@@ -44,30 +42,39 @@ public class UpGradeInGamePlay : MonoBehaviour
         }
     }
 
+    public int BossDieCount { get => bossDieCount; set => bossDieCount = value; }
+    private void Awake()
+    {
+        
+    }
     private void Update()
     {
-        enemyDieText.text = enemyDieCount.ToString();
-        bossDieText.text = bossDieCount.ToString();
+        
+        
     }
 
     private void Start()
     {
+        upGradePet.SetActive(true);
+        UpdatePetManager.Instance.ShowUpdate();
+        Time.timeScale = 0;
         StartChecking();
-        continuePet.onClick.AddListener(ResumeGame);
-        continueCharacter.onClick.AddListener(ResumeGame);
+
     }
 
     public void IncreaseEnemyDieCount()
     {
         Debug.LogWarning(enemyDieCount);
         enemyDieCount++;
+        enemyDieText.text = enemyDieCount.ToString();
         CheckUpgradePetConditions();
     }
 
     public void IncreaseBossDieCount()
     {
-        bossDieCount++;
-        Debug.LogWarning(bossDieCount);
+        BossDieCount++;
+        bossDieText.text = BossDieCount.ToString();
+        Debug.LogWarning(BossDieCount);
         CheckUpgradeCharacterConditions();
     }
 
@@ -75,7 +82,12 @@ public class UpGradeInGamePlay : MonoBehaviour
     {
         if (enemyDieCount % upgradePetThreshold == 0 && enemyDieCount > previousUpgradePetCount)
         {
+            //upGradeCharacter.SetActive(true);
+            //UpgradeCharacterManager.Instance.ShowUpdate();
+
             upGradePet.SetActive(true);
+            UpdatePetManager.Instance.ShowUpdate();
+
             previousUpgradePetCount += upgradePetThreshold;
             Time.timeScale = 0;
         }
@@ -83,9 +95,10 @@ public class UpGradeInGamePlay : MonoBehaviour
 
     private void CheckUpgradeCharacterConditions()
     {
-        if (bossDieCount % upgradeCharacterThreshold == 0 && bossDieCount > previousUpgradeCharacterCount)
+        if (BossDieCount % upgradeCharacterThreshold == 0 && BossDieCount > previousUpgradeCharacterCount)
         {
-            upGradeCharacter.SetActive(true);
+            upGradePet.SetActive(true);
+            UpdatePetManager.Instance.ShowUpdate();
             previousUpgradeCharacterCount += upgradeCharacterThreshold;
             Time.timeScale = 0;
         }
@@ -110,7 +123,7 @@ public class UpGradeInGamePlay : MonoBehaviour
         }
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         upGradePet.SetActive(false);
         upGradeCharacter.SetActive(false);

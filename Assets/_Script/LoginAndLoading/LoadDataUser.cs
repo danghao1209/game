@@ -71,6 +71,11 @@ public class LoadDataUser : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(0);
         yield return operation;
     }
+
+    public void SetPlayerData(PlayerData playerData)
+    {
+        this.playerData = playerData;
+    }
 }
 
 public class PlayerData

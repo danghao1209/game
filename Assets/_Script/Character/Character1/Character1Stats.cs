@@ -9,7 +9,7 @@ public class Character1Stats : CharacterStats
     public Character1Stats()
     {
         armor = 20;
-        speed_run = 4;
+        speed_run = 3;
         speed_attack = 1;
         maxHealth = 500;
         atk = 30;

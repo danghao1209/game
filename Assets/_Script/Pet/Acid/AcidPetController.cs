@@ -30,14 +30,21 @@ public class AcidPetController : MonoBehaviour
         {
             GetListEnemyAndBossAround getList = character.GetComponent<GetListEnemyAndBossAround>();
 
-            List<GameObject> randomObj = getList.GetRandomObjects(1);
+            List<GameObject> randomObj = getList.GetRandomObjects(2);
 
             if (randomObj.Count > 0)
             {
-                if (randomObj[0] != null)
+                for (int i = 0; i < randomObj.Count; i++)
                 {
-                    GameObject bulletTmp = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
+                    if (randomObj[i] != null)
+                    {
+                        GameObject bulletTmp = Instantiate(acidWeapon, randomObj[i].transform.position, Quaternion.identity);
+                    }
                 }
+                //if (randomObj[0] != null)
+                //{
+                //    GameObject bulletTmp = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
+                //}
             }
         }
         catch (System.Exception e)
@@ -56,21 +63,29 @@ public class AcidPetController : MonoBehaviour
         {
             GetListEnemyAndBossAround getList = character.GetComponent<GetListEnemyAndBossAround>();
 
-            List<GameObject> randomObj = getList.GetRandomObjects(2);
+            List<GameObject> randomObj = getList.GetRandomObjects(3);
 
             if (randomObj.Count > 0)
             {
-                if (randomObj[0] != null)
+                for (int i = 0; i < randomObj.Count; i++)
                 {
-                    GameObject bulletTmp1 = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
-                    bulletTmp1.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+                    if (randomObj[i] != null)
+                    {
+                        GameObject bulletTmp = Instantiate(acidWeapon, randomObj[i].transform.position, Quaternion.identity);
+                    }
                 }
 
-                if (randomObj[1] != null)
-                {
-                    GameObject bulletTmp2 = Instantiate(acidWeapon, randomObj[1].transform.position, Quaternion.identity);
-                    bulletTmp2.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
-                }
+                //if (randomObj[0] != null)
+                //{
+                //    GameObject bulletTmp1 = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
+                //    bulletTmp1.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+                //}
+
+                //if (randomObj[1] != null)
+                //{
+                //    GameObject bulletTmp2 = Instantiate(acidWeapon, randomObj[1].transform.position, Quaternion.identity);
+                //    bulletTmp2.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+                //}
 
             }
         }
@@ -88,28 +103,37 @@ public class AcidPetController : MonoBehaviour
         {
             GetListEnemyAndBossAround getList = character.GetComponent<GetListEnemyAndBossAround>();
 
-            List<GameObject> randomObj = getList.GetRandomObjects(3);
+            List<GameObject> randomObj = getList.GetRandomObjects(4);
 
             if (randomObj.Count > 0)
             {
-                if (randomObj[0] != null)
+                for (int i = 0; i < randomObj.Count; i++)
                 {
-                    GameObject bulletTmp1 = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
-                    bulletTmp1.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
-
+                    if (randomObj[i] != null)
+                    {
+                        GameObject bulletTmp = Instantiate(acidWeapon, randomObj[i].transform.position, Quaternion.identity);
+                    }
                 }
 
-                if (randomObj[1] != null)
-                {
-                    GameObject bulletTmp2 = Instantiate(acidWeapon, randomObj[1].transform.position, Quaternion.identity);
-                    bulletTmp2.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
-                }
 
-                if (randomObj[2] != null)
-                {
-                    GameObject bulletTmp3 = Instantiate(acidWeapon, randomObj[2].transform.position, Quaternion.identity);
-                    bulletTmp3.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
-                }
+                //if (randomObj[0] != null)
+                //{
+                //    GameObject bulletTmp1 = Instantiate(acidWeapon, randomObj[0].transform.position, Quaternion.identity);
+                //    bulletTmp1.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
+
+                //}
+
+                //if (randomObj[1] != null)
+                //{
+                //    GameObject bulletTmp2 = Instantiate(acidWeapon, randomObj[1].transform.position, Quaternion.identity);
+                //    bulletTmp2.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
+                //}
+
+                //if (randomObj[2] != null)
+                //{
+                //    GameObject bulletTmp3 = Instantiate(acidWeapon, randomObj[2].transform.position, Quaternion.identity);
+                //    bulletTmp3.transform.localScale = new Vector3(3.5f, 3.5f, 1.0f);
+                //}
             }
         }
         catch (System.Exception e)

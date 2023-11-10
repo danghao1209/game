@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8747581461484786827}
   - component: {fileID: -2475526474108537048}
   - component: {fileID: -6264953189990509295}
-  - component: {fileID: 8641618960113858467}
+  - component: {fileID: 2090134436469585301}
   m_Layer: 0
   m_Name: FireWeapon
   m_TagString: Untagged
@@ -171,7 +171,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &8641618960113858467
+--- !u!114 &2090134436469585301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2249516183821145554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff6dd3dd976384459a09db827eaf7c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 134133b85fbd24342b259263250a85e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  petStats: {fileID: 0}

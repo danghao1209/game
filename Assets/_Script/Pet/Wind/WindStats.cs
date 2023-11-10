@@ -10,7 +10,6 @@ public class WindStats : PetStats
     // Start is called before the first frame update
     private static WindStats _instance;
 
-    public PetManager petManager;
     private void Awake()
     {
         if (_instance == null)
@@ -24,17 +23,17 @@ public class WindStats : PetStats
             Destroy(gameObject);
         }
 
-        name = petManager.water.name;
-        star = petManager.water.star;
-        atk = petManager.water.atk;
-        cooldown = petManager.water.cooldown;
-        atkBuff = petManager.water.atkBuff;
-        critBuff = petManager.water.critBuff;
-        speedRunBuff = petManager.water.speedRunBuff;
-        speedAttachBuff = petManager.water.speedAttachBuff;
-        hpBuff = petManager.water.hpBuff;
-        dameCritBuff = petManager.water.dameCritBuff;
-        armorBuff = petManager.water.armorBuff;
+        name = PetManager.Instance.wind.name;
+        star = PetManager.Instance.wind.star;
+        atk = PetManager.Instance.wind.atk;
+        cooldown = PetManager.Instance.wind.cooldown;
+        atkBuff = PetManager.Instance.wind.atkBuff;
+        critBuff = PetManager.Instance.wind.critBuff;
+        speedRunBuff = PetManager.Instance.wind.speedRunBuff;
+        speedAttachBuff = PetManager.Instance.wind.speedAttachBuff;
+        hpBuff = PetManager.Instance.wind.hpBuff;
+        dameCritBuff = PetManager.Instance.wind.dameCritBuff;
+        armorBuff = PetManager.Instance.wind.armorBuff;
 
     }
     public static WindStats Instance
