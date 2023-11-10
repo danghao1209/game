@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2085659917036088132}
   - component: {fileID: 6558749519874984019}
   - component: {fileID: 8003067059374499198}
+  - component: {fileID: -5784013029382139648}
   m_Layer: 0
   m_Name: DemonBossPrefab
   m_TagString: Untagged
@@ -226,3 +227,17 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   bossStats: {fileID: 6558749519874984019}
   dame: 0
+--- !u!114 &-5784013029382139648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545447976426189370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd4e918f0e016b4ebdb7c6062e036be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  boss: {fileID: 6558749519874984019}

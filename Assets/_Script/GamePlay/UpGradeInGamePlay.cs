@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class UpGradeInGamePlay : MonoBehaviour
@@ -11,7 +12,7 @@ public class UpGradeInGamePlay : MonoBehaviour
     private int enemyDieCount = 0;
     private int bossDieCount = 0;
 
-    private readonly int upgradePetThreshold = 20;
+    private readonly int upgradePetThreshold = 40;
     private readonly int upgradeCharacterThreshold = 1;
 
     public GameObject upGradePet;
@@ -24,6 +25,7 @@ public class UpGradeInGamePlay : MonoBehaviour
     private int previousUpgradePetCount = 0;
     private int previousUpgradeCharacterCount = 0;
 
+    CharacterStats character;
 
     public static UpGradeInGamePlay Instance
     {
@@ -45,7 +47,14 @@ public class UpGradeInGamePlay : MonoBehaviour
     public int BossDieCount { get => bossDieCount; set => bossDieCount = value; }
     private void Awake()
     {
-        
+        //if (GameObject.Find("Player1") != null)
+        //{
+        //    character = Character1Stats.Instance;
+        //}
+        //else
+        //{
+        //    character = Character2Stats.Instance;
+        //}
     }
     private void Update()
     {
@@ -55,8 +64,11 @@ public class UpGradeInGamePlay : MonoBehaviour
 
     private void Start()
     {
-        upGradePet.SetActive(true);
-        UpdatePetManager.Instance.ShowUpdate();
+        if (UpgradeManager.Instance.select_pet_start_game)
+        {
+            upGradePet.SetActive(true);
+            UpdatePetManager.Instance.ShowUpdate();
+        }
         Time.timeScale = 0;
         StartChecking();
 
@@ -82,14 +94,34 @@ public class UpGradeInGamePlay : MonoBehaviour
     {
         if (enemyDieCount % upgradePetThreshold == 0 && enemyDieCount > previousUpgradePetCount)
         {
-            //upGradeCharacter.SetActive(true);
-            //UpgradeCharacterManager.Instance.ShowUpdate();
+            if (GameObject.Find("Player1") != null)
+            {
+                character = Character1Stats.Instance;
+            }
+            else
+            {
+                character = Character2Stats.Instance;
+            }
 
-            upGradePet.SetActive(true);
-            UpdatePetManager.Instance.ShowUpdate();
+            Time.timeScale = 0;
+            upGradeCharacter.SetActive(true);
+            UpgradeCharacterManager.Instance.ShowUpdate();
+
+            //upGradePet.SetActive(true);
+            //UpdatePetManager.Instance.ShowUpdate();
 
             previousUpgradePetCount += upgradePetThreshold;
-            Time.timeScale = 0;
+            bool healSeal = (character.maxHealth - character.currentHp) >= 30;
+            int heal = character.maxHealth - character.currentHp;
+            if (UpgradeManager.Instance.health_up_evel > 0 && healSeal)
+            {
+                character.currentHp += 30;
+            }
+            else if (UpgradeManager.Instance.health_up_evel > 0 && heal > 0)
+            {
+                character.currentHp += heal;
+            }
+
         }
     }
 
@@ -97,10 +129,30 @@ public class UpGradeInGamePlay : MonoBehaviour
     {
         if (BossDieCount % upgradeCharacterThreshold == 0 && BossDieCount > previousUpgradeCharacterCount)
         {
+            if (GameObject.Find("Player1") != null)
+            {
+                character = Character1Stats.Instance;
+            }
+            else
+            {
+                character = Character2Stats.Instance;
+            }
+
+            Time.timeScale = 0;
             upGradePet.SetActive(true);
             UpdatePetManager.Instance.ShowUpdate();
             previousUpgradeCharacterCount += upgradeCharacterThreshold;
-            Time.timeScale = 0;
+            bool healSeal = (character.maxHealth - character.currentHp) >= 30;
+            int heal = character.maxHealth - character.currentHp;
+            if (UpgradeManager.Instance.health_up_evel > 0 && healSeal)
+            {
+                character.currentHp += 30;
+            }
+            else if (UpgradeManager.Instance.health_up_evel > 0 && heal > 0)
+            {
+                character.currentHp += heal;
+            }
+            
         }
     }
 
@@ -128,5 +180,15 @@ public class UpGradeInGamePlay : MonoBehaviour
         upGradePet.SetActive(false);
         upGradeCharacter.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public int EnemyCountEnd()
+    {
+        return this.enemyDieCount;
+    }
+
+    public int BossCountEnd()
+    {
+        return this.bossDieCount;
     }
 }

@@ -37,10 +37,7 @@ public class UpgradeManager : MonoBehaviour
             instance = this;
              // Đảm bảo rằng lớp này không bị hủy khi chuyển màn hình
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -49,7 +46,16 @@ public class UpgradeManager : MonoBehaviour
     {
         levelHave = loadDataUser.playerData.upgrade;
 
-        switch(levelHave)
+
+        LoadUpGrade(levelHave);
+
+        Debug.Log("hihihih");
+
+    }
+
+    public void LoadUpGrade(int levelHave)
+    {
+        switch (levelHave)
         {
             case 0:
                 {
@@ -97,7 +103,7 @@ public class UpgradeManager : MonoBehaviour
                     atk = upgradeLoad.level3.numberOrPercent;
                     armor = upgradeLoad.level4.numberOrPercent;
                     speed_run = upgradeLoad.level5.numberOrPercent;
-                    speed_attack= upgradeLoad.level6.numberOrPercent;
+                    speed_attack = upgradeLoad.level6.numberOrPercent;
                     break;
                 }
             case 7:
@@ -108,7 +114,7 @@ public class UpgradeManager : MonoBehaviour
                     armor = upgradeLoad.level4.numberOrPercent;
                     speed_run = upgradeLoad.level5.numberOrPercent;
                     speed_attack = upgradeLoad.level6.numberOrPercent;
-                    cooldown= upgradeLoad.level7.numberOrPercent;
+                    cooldown = upgradeLoad.level7.numberOrPercent;
                     break;
                 }
             case 8:
@@ -133,7 +139,7 @@ public class UpgradeManager : MonoBehaviour
                     speed_attack = upgradeLoad.level6.numberOrPercent;
                     cooldown = upgradeLoad.level7.numberOrPercent;
                     crit = upgradeLoad.level8.numberOrPercent;
-                    crit_dame_percent= upgradeLoad.level9.numberOrPercent;
+                    crit_dame_percent = upgradeLoad.level9.numberOrPercent;
                     break;
                 }
             case 10:
@@ -152,9 +158,5 @@ public class UpgradeManager : MonoBehaviour
                 }
 
         }
-
-
-        Debug.Log(select_pet_start_game);
-
     }
 }

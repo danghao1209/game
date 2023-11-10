@@ -13,11 +13,36 @@ public class WaterPetController : MonoBehaviour
     public float bulletForce;
     public int level;
     public int maxLevel;
+    CharacterStats characterhi;
 
     private void Awake()
     {
         level = 0;
         maxLevel = 3;
+
+        if (GameObject.Find("Player1") != null)
+        {
+            characterhi = Character1Stats.Instance;
+        }
+        else
+        {
+            characterhi = Character2Stats.Instance;
+        }
+
+        int hpIncrease = (int)(characterhi.maxHealth * PetManager.Instance.water.hpBuff / 100f);
+        characterhi.maxHealth += hpIncrease;
+
+        int hp = characterhi.maxHealth - characterhi.currentHp;
+
+        if (hp <= hpIncrease)
+        {
+            characterhi.currentHp = characterhi.maxHealth;
+        }
+        else
+        {
+            characterhi.currentHp += hpIncrease;
+        }
+
     }
 
     void Start()

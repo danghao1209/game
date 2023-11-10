@@ -6,6 +6,7 @@ public class AcidPetController : MonoBehaviour
 {
     public GameObject acidWeapon;
     public GameObject character;
+    CharacterStats characterStats;
 
     public float TimeBtwFire = 2.5f;
     public float bulletForce;
@@ -17,6 +18,15 @@ public class AcidPetController : MonoBehaviour
     {
         level = 0;
         maxLevel = 3;
+        if (GameObject.Find("Player1") != null)
+        {
+            characterStats = Character1Stats.Instance;
+        }
+        else if (GameObject.Find("Player2") != null)
+        {
+            characterStats = Character2Stats.Instance;
+        }
+        characterStats.crit_dame_percent += (int)(characterStats.crit_dame_percent * PetManager.Instance.acid.dameCritBuff / 100f);
     }
 
     void Start()

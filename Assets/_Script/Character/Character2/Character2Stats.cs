@@ -31,14 +31,15 @@ public class Character2Stats : CharacterStats
     }
     private void Awake()
     {
-        UpgradeManager upgrade = UpgradeManager.Instance;
-        armor = (int)(armor * (1 + (float)upgrade.armor / 100));
-        speed_run = (int)(speed_run * (1 + (float)upgrade.speed_run / 100));
-        maxHealth = (int)(maxHealth * (1 + (float)upgrade.health / 100));
-        atk = (int)(atk * (1 + (float)upgrade.atk / 100));
-        crit = (int)(crit * (1 + (float)upgrade.crit / 100));
-        speed_attack = (int)(speed_attack * (1 + (float)upgrade.speed_attack / 100));
-        crit_dame_percent = (int)(crit_dame_percent + upgrade.crit_dame_percent);
+        Debug.Log("atk " +UpgradeManager.Instance.atk.ToString());
+        
+        armor = (int)(armor * (1 + (float)UpgradeManager.Instance.armor / 100));
+        speed_run = (int)(speed_run * (1 + (float)UpgradeManager.Instance.speed_run / 100));
+        maxHealth = (int)(maxHealth * (1 + (float)UpgradeManager.Instance.health / 100));
+        atk = (int)(atk * (1 + (float)UpgradeManager.Instance.atk / 100));
+        crit = (int)(crit * (1 + (float)UpgradeManager.Instance.crit / 100));
+        speed_attack = (int)(speed_attack * (1 + (float)UpgradeManager.Instance.speed_attack / 100));
+        crit_dame_percent = (int)(crit_dame_percent + UpgradeManager.Instance.crit_dame_percent);
 
         
     }

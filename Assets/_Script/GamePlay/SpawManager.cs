@@ -25,7 +25,6 @@ public class SpawManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnFirst());
-        StartCoroutine(SpawnBossWithHealth(200, 3));
     }
 
     IEnumerator SpawnFirst()

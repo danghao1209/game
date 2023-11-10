@@ -7,8 +7,6 @@ public class HpBarManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Slider slider;
-    [SerializeField] private GameObject character1;
-    [SerializeField] private GameObject character2;
     CharacterStats character;
 
     private static HpBarManager instance;
@@ -36,7 +34,7 @@ public class HpBarManager : MonoBehaviour
         }
 
 
-        if (character1 != null)
+        if (GameObject.Find("Player1") != null)
         {
             character = Character1Stats.Instance;
         }
@@ -48,6 +46,7 @@ public class HpBarManager : MonoBehaviour
     void Start()
     {
         originalRotation = transform.localRotation;
+        Debug.Log(character.currentHp + "|" + character.maxHealth);
         UpdateHealthBar(character.currentHp, character.maxHealth);
     }
 

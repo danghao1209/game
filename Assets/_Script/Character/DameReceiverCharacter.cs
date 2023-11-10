@@ -6,7 +6,7 @@ public class DameReceiverCharacter : MonoBehaviour
 {
     // Start is called before the first frame update
     protected CharacterStats characterStats;
-
+    public GameObject endUI;
     void Start()
     {
         if (GameObject.Find("Player1") != null)
@@ -50,6 +50,8 @@ public class DameReceiverCharacter : MonoBehaviour
             if (characterStats.currentHp < 0)
             {
                 characterStats.currentHp = 0;
+                Time.timeScale = 0;
+                endUI.SetActive(true);
             }
 
 

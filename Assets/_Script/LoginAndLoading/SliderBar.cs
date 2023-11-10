@@ -9,9 +9,9 @@ public class SliderBar : MonoBehaviour
     int progressValue = 0;
 
     public Slider slider;
-   public void OnSliderChanged(float value)
+    public void OnSliderChanged(float value)
     {
-        valueText.text = value.ToString()+"%";
+            valueText.text = value.ToString()+"%";
     }
 
     public void UpdateProgress(int progress)

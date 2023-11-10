@@ -55,19 +55,15 @@ public class UpgradeCharacterManager : MonoBehaviour
         {
             _instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
 
-        if (GameObject.Find("Player1") != null)
-        {
-            character = Character1Stats.Instance;
-        }
-        else
-        {
-            character = Character2Stats.Instance;
-        }
+        //if (GameObject.Find("Player1") != null)
+        //{
+        //    character = Character1Stats.Instance;
+        //}
+        //else
+        //{
+        //    character = Character2Stats.Instance;
+        //}
 
 
         dame = new NangCap("dame");
@@ -94,13 +90,21 @@ public class UpgradeCharacterManager : MonoBehaviour
 
     private List<NangCap> GetListUpdate()
     {
-        List<NangCap> list = new();
+        List<NangCap> list = new List<NangCap>();
+
         while (list.Count < 3)
         {
             int index = UnityEngine.Random.Range(0, danhSachNangCap.Count);
-            NangCap pet = danhSachNangCap[index];
-            list.Add(pet);
+
+            // Kiểm tra xem phần tử đã có trong danh sách chưa
+            if (!list.Contains(danhSachNangCap[index]))
+            {
+                NangCap characterhihi = danhSachNangCap[index];
+                list.Add(characterhihi);
+                Debug.Log(characterhihi.name);
+            }
         }
+
         return list;
     }
     public void HandleUpAtk()
@@ -153,10 +157,10 @@ public class UpgradeCharacterManager : MonoBehaviour
         int position = -300;
         for (int i = 0; i < listPetUp.Count; i++)
         {
-            string pet = listPetUp[i].name;
+            string characterhihi = listPetUp[i].name;
 
             // Ánh xạ giá trị pet vào hàm hoặc delegate tương ứng
-            switch (pet)
+            switch (characterhihi)
             {
                 case "dame":
                     {
@@ -302,46 +306,55 @@ public class UpgradeCharacterManager : MonoBehaviour
         
     }
 
-    private void LevelUpCharacter(string pet)
+    private void LevelUpCharacter(string characterMNG)
     {
-        if (pet == "dame")
+        if (GameObject.Find("Player1") != null)
+        {
+            character = Character1Stats.Instance;
+        }
+        else
+        {
+            character = Character2Stats.Instance;
+        }
+
+        if (characterMNG == "dame")
         {
             dame.level++;
             character.atk += 30;
             SetUIFalse();
         }
-        else if (pet == "hp")
+        else if (characterMNG == "hp")
         {
             hp.level++;
             character.maxHealth += 150;
             character.currentHp += 150;
             SetUIFalse();
         }
-        else if (pet == "amor")
+        else if (characterMNG == "amor")
         {
             amor.level++;
             character.armor += 10;
             SetUIFalse();
         }
-        else if (pet == "speedRun")
+        else if (characterMNG == "speedRun")
         {
             speedRun.level++;
             character.speed_run += 1;
             SetUIFalse();
         }
-        else if (pet == "speedAtk")
+        else if (characterMNG == "speedAtk")
         {
             speedAtk.level++;
             character.speed_attack -= 0.1;
             SetUIFalse();
         }
-        else if (pet == "dameCrit")
+        else if (characterMNG == "dameCrit")
         {
             character.crit_dame_percent += 5;
             dameCrit.level++;
             SetUIFalse();
         }
-        else if (pet == "crit")
+        else if (characterMNG == "crit")
         {
             crit.level++;
             character.crit += 5;

@@ -16,8 +16,15 @@ public class FirePetController : MonoBehaviour
 
     public int level;
     public int maxLevel;
+
+    CharacterStats characterhi;
+
     private void Awake()
     {
+        
+
+        level = 0;
+        maxLevel = 3;
         if (GameObject.Find("Player1") != null)
         {
             characterStats = Character1Stats.Instance;
@@ -26,10 +33,9 @@ public class FirePetController : MonoBehaviour
         {
             characterStats = Character2Stats.Instance;
         }
+        characterStats.atk += (int)(characterStats.atk * PetManager.Instance.fire.atkBuff / 100f);
 
-        level = 0;
-        maxLevel = 3;
-       
+
     }
     void Start()
     {

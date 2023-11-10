@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4790229739267565787}
   - component: {fileID: 5667394048700298302}
   - component: {fileID: 4682394844175156143}
+  - component: {fileID: 5681859220775532297}
   m_Layer: 0
   m_Name: BossCuoiPrefab
   m_TagString: Untagged
@@ -226,3 +227,17 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   bossStats: {fileID: 5667394048700298302}
   dame: 0
+--- !u!114 &5681859220775532297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3945638524193131223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd4e918f0e016b4ebdb7c6062e036be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  boss: {fileID: 5667394048700298302}

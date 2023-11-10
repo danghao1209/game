@@ -7,6 +7,7 @@ public class LightingController : MonoBehaviour
 {
     public GameObject lightingWeapon;
     public GameObject character;
+    CharacterStats characterStats;
 
     public float TimeBtwFire = 1f;
     public float bulletForce;
@@ -19,6 +20,15 @@ public class LightingController : MonoBehaviour
     {
         level = 0;
         maxLevel = 3;
+        if (GameObject.Find("Player1") != null)
+        {
+            characterStats = Character1Stats.Instance;
+        }
+        else if (GameObject.Find("Player2") != null)
+        {
+            characterStats = Character2Stats.Instance;
+        }
+        characterStats.crit += (int)(characterStats.crit * PetManager.Instance.lighting.critBuff / 100f);
     }
 
     void Start()
@@ -45,24 +55,6 @@ public class LightingController : MonoBehaviour
                     }
                 }
 
-                //if (randomObj[0] != null)
-                //{
-                    
-                //    GameObject bulletTmp = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-                    
-                //}
-                //if (randomObj[1] != null)
-                //{
-
-                //    GameObject bulletTmp = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-
-                //}
-                //if (randomObj[2] != null)
-                //{
-
-                //    GameObject bulletTmp = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-
-                //}
             }
         }
         catch(System.Exception e)
@@ -95,37 +87,6 @@ public class LightingController : MonoBehaviour
                     }
                 }
 
-                //if (randomObj[0] != null)
-                //{
-                //    GameObject bulletTmp1 = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-                //    bulletTmp1.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
-
-                //if (randomObj[1] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
-                //if (randomObj[2] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
-                //if (randomObj[3] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
-                //if (randomObj[4] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
-                //if (randomObj[5] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(0.7f, 0.7f, 1.0f);
-                //}
             }
         }
         catch (System.Exception e)
@@ -156,63 +117,6 @@ public class LightingController : MonoBehaviour
                     }
                 }
 
-                //if (randomObj[0] != null)
-                //{
-                //    GameObject bulletTmp1 = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-                //    bulletTmp1.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[1] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[2] != null)
-                //{
-                //    GameObject bulletTmp3 = Instantiate(lightingWeapon, randomObj[2].transform.position, Quaternion.identity);
-                //    bulletTmp3.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-                //if (randomObj[3] != null)
-                //{
-                //    GameObject bulletTmp1 = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-                //    bulletTmp1.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[4] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[5] != null)
-                //{
-                //    GameObject bulletTmp3 = Instantiate(lightingWeapon, randomObj[2].transform.position, Quaternion.identity);
-                //    bulletTmp3.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-                //if (randomObj[6] != null)
-                //{
-                //    GameObject bulletTmp1 = Instantiate(lightingWeapon, randomObj[0].transform.position, Quaternion.identity);
-                //    bulletTmp1.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[7] != null)
-                //{
-                //    GameObject bulletTmp2 = Instantiate(lightingWeapon, randomObj[1].transform.position, Quaternion.identity);
-                //    bulletTmp2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[8] != null)
-                //{
-                //    GameObject bulletTmp3 = Instantiate(lightingWeapon, randomObj[2].transform.position, Quaternion.identity);
-                //    bulletTmp3.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
-
-                //if (randomObj[9] != null)
-                //{
-                //    GameObject bulletTmp3 = Instantiate(lightingWeapon, randomObj[2].transform.position, Quaternion.identity);
-                //    bulletTmp3.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                //}
             }
         }
         catch (System.Exception e)

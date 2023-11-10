@@ -305,6 +305,7 @@ public class UpgradeCharacterScreenManager : MonoBehaviour
                 Debug.Log("ok level up");
                 PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(request.downloadHandler.text);
                 LoadDataUser.Instance.SetPlayerData(playerData);
+                UpgradeManager.Instance.LoadUpGrade(playerData.upgrade);
                 coinText.text = LoadDataUser.Instance.playerData.coin.ToString();
                 LoadCoinNeedAndLock();
             }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 828506461920249886}
   - component: {fileID: 8977702902456570960}
   - component: {fileID: 4589252196530805793}
+  - component: {fileID: -1805565539482306223}
   m_Layer: 0
   m_Name: HeadFireBossPrefab
   m_TagString: Untagged
@@ -226,3 +227,17 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   bossStats: {fileID: 8977702902456570960}
   dame: 0
+--- !u!114 &-1805565539482306223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002833120098449165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd4e918f0e016b4ebdb7c6062e036be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  boss: {fileID: 8977702902456570960}

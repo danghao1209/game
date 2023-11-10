@@ -9,6 +9,8 @@ public class WindDameSender : MonoBehaviour
     private void Awake()
     {
         petStats = WindStats.Instance;
+
+        Debug.Log(petStats.atk + "hihihihhihii");
     }
 
 

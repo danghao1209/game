@@ -80,8 +80,6 @@ public class PetManager : MonoBehaviour
             else
             {
                 //TokenResponse tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(request.downloadHandler.text);
-               
-
                 pets = JsonConvert.DeserializeObject<List<Pet>>(request.downloadHandler.text);
                 Debug.Log("pet ok");
                 water = GetPetByName("water");
