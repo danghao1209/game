@@ -26,7 +26,7 @@ public class AcidPetController : MonoBehaviour
         {
             characterStats = Character2Stats.Instance;
         }
-        characterStats.crit_dame_percent += (int)(characterStats.crit_dame_percent * PetManager.Instance.acid.dameCritBuff / 100f);
+        characterStats.crit_dame_percent += PetManager.Instance.acid.dameCritBuff;
     }
 
     void Start()

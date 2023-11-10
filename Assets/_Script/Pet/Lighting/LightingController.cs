@@ -28,7 +28,7 @@ public class LightingController : MonoBehaviour
         {
             characterStats = Character2Stats.Instance;
         }
-        characterStats.crit += (int)(characterStats.crit * PetManager.Instance.lighting.critBuff / 100f);
+        characterStats.crit += PetManager.Instance.lighting.critBuff;
     }
 
     void Start()
