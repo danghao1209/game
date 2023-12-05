@@ -66,10 +66,10 @@ public class UpGradeInGamePlay : MonoBehaviour
     {
         if (UpgradeManager.Instance.select_pet_start_game)
         {
+            Time.timeScale = 0;
             upGradePet.SetActive(true);
             UpdatePetManager.Instance.ShowUpdate();
         }
-        Time.timeScale = 0;
         StartChecking();
 
     }

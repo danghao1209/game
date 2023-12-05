@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class EndGameScript : MonoBehaviour
 {
@@ -55,11 +56,18 @@ public class EndGameScript : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.isHttpError || request.isNetworkError)
             {
-                
+
+                AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+
+                yield return operation;
             }
             else
             {
+
                 LoadDataUser.Instance.playerData.coin += coin;
+                AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+                yield return operation;
+
             }
         }
     }

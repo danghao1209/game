@@ -37,7 +37,10 @@ public class LoadingManager : MonoBehaviour
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
-    
+    public void LoadLevel1()
+    {
+        StartCoroutine(LoadAsynchronously(1));
+    }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
